@@ -1,6 +1,6 @@
 This repository contains the code for the paper: 
 # Linguistic Firewall: Geometry as Defense in Multi-Agent Systems Routing
-Submitted to ICML 2026
+Submitted to NeurIPS 2026
 
 ## Abstract
 The orchestration of Multi-Agent Systems (MAS) commonly relies on routing components that select agents based on their natural-language descriptions. 
