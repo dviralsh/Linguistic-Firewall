@@ -1,0 +1,7 @@
+dataset,router,n_rows,asr
+MMLU,antap,1500,0.002
+MMLU,embedllm,1500,0.058
+MMLU,autogen,1500,0.7527
+AgentHarm,antap,176,0.0
+AgentHarm,embedllm,176,0.0
+AgentHarm,autogen,176,0.6705

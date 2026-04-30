@@ -1,0 +1,16 @@
+experiment,method,train,test,ACC%,ASR%
+1_unseen_trigger,badnet,MMLU (untriggered only),MMLU,44.6,4.6
+2_cross_dataset,badnet,MMLU,BBH,13.8,
+2_cross_dataset,badnet,BBH,MMLU,36.9,0.9
+1_unseen_trigger,sleeper,MMLU (untriggered only),MMLU,66.7,0.6
+2_cross_dataset,sleeper,MMLU,BBH,15.4,
+2_cross_dataset,sleeper,BBH,MMLU,50.1,0.3
+1_unseen_trigger,vpi,MMLU (untriggered only),MMLU,66.5,2.0
+2_cross_dataset,vpi,MMLU,BBH,14.8,
+2_cross_dataset,vpi,BBH,MMLU,58.7,0.3
+1_unseen_trigger,mtba,MMLU (untriggered only),MMLU,66.1,2.7
+2_cross_dataset,mtba,MMLU,BBH,13.1,
+2_cross_dataset,mtba,BBH,MMLU,55.4,0.6
+1_unseen_trigger,ctba,MMLU (untriggered only),MMLU,64.3,4.1
+2_cross_dataset,ctba,MMLU,BBH,14.6,
+2_cross_dataset,ctba,BBH,MMLU,56.5,0.3

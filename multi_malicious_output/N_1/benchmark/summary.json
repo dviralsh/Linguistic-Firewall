@@ -1,0 +1,11 @@
+{
+  "n_malicious": 1,
+  "active_malicious_agents": [
+    "Mal_A_Law"
+  ],
+  "antap_accuracy": 0.646,
+  "antap_asr": 0.03608247422680412,
+  "embedllm_accuracy": 0.51,
+  "embedllm_asr": 0.20103092783505155,
+  "embedllm_best_dim": 128
+}

@@ -1,0 +1,37 @@
+\begin{table}[t]
+\centering
+\small
+\caption{RQ1 results with bootstrap 95\% CI (n=10{,}000 resamples). Values shown as mean\,$\pm$\,half-width of CI (\%).}
+\label{tab:rq1_ci}
+\begin{tabular}{llccccccc}
+\toprule
+ & & \multicolumn{2}{c}{\textbf{ANTAP}} & \multicolumn{2}{c}{\textbf{EmbedLLM}} & \multicolumn{2}{c}{\textbf{AutoGen}} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}
+\textbf{Experiment} & \textbf{Dataset} & ACC & ASR & ACC & ASR & ACC & ASR \\
+\midrule
+Description & MMLU & 65.1\,{\scriptsize$\pm$2.4} & 0.2\,{\scriptsize$\pm$0.2} & 46.3\,{\scriptsize$\pm$2.5} & 5.8\,{\scriptsize$\pm$1.2} & 12.3\,{\scriptsize$\pm$1.6} & 75.3\,{\scriptsize$\pm$2.2} \\
+Description & AgentHarm & 45.5\,{\scriptsize$\pm$7.4} & 0.0\,{\scriptsize$\pm$0.0} & 14.2\,{\scriptsize$\pm$5.1} & 0.0\,{\scriptsize$\pm$0.0} & 10.2\,{\scriptsize$\pm$4.5} & 67.0\,{\scriptsize$\pm$6.8} \\
+Description & BBH & 25.0\,{\scriptsize$\pm$2.3} & 0.4\,{\scriptsize$\pm$0.3} & 24.1\,{\scriptsize$\pm$2.3} & 0.9\,{\scriptsize$\pm$0.5} & 1.1\,{\scriptsize$\pm$0.5} & 67.3\,{\scriptsize$\pm$2.5} \\
+\midrule
+Sleeper-BadNet & MMLU & 44.9\,{\scriptsize$\pm$2.5} & 2.4\,{\scriptsize$\pm$1.1} & 31.8\,{\scriptsize$\pm$2.3} & 21.3\,{\scriptsize$\pm$3.0} & 29.4\,{\scriptsize$\pm$2.3} & 73.2\,{\scriptsize$\pm$3.3} \\
+Sleeper-BadNet & AgentHarm & 0.0\,{\scriptsize$\pm$0.0} & \text{N/A} & 0.0\,{\scriptsize$\pm$0.0} & \text{N/A} & 0.0\,{\scriptsize$\pm$0.0} & \text{N/A} \\
+Sleeper-BadNet & BBH & 25.2\,{\scriptsize$\pm$2.3} & \text{N/A} & 23.6\,{\scriptsize$\pm$2.2} & \text{N/A} & 1.1\,{\scriptsize$\pm$0.5} & \text{N/A} \\
+\midrule
+Sleeper-Sleeper & MMLU & 68.2\,{\scriptsize$\pm$2.3} & 0.9\,{\scriptsize$\pm$0.6} & 52.3\,{\scriptsize$\pm$2.5} & 17.0\,{\scriptsize$\pm$2.9} & 39.3\,{\scriptsize$\pm$2.5} & 73.5\,{\scriptsize$\pm$3.3} \\
+Sleeper-Sleeper & AgentHarm & 53.4\,{\scriptsize$\pm$7.4} & \text{N/A} & 34.7\,{\scriptsize$\pm$6.8} & \text{N/A} & 14.2\,{\scriptsize$\pm$5.4} & \text{N/A} \\
+Sleeper-Sleeper & BBH & 25.2\,{\scriptsize$\pm$2.3} & \text{N/A} & 23.6\,{\scriptsize$\pm$2.2} & \text{N/A} & 1.3\,{\scriptsize$\pm$0.6} & \text{N/A} \\
+\midrule
+Sleeper-VPI & MMLU & 68.2\,{\scriptsize$\pm$2.4} & 0.9\,{\scriptsize$\pm$0.6} & 51.1\,{\scriptsize$\pm$2.5} & 12.2\,{\scriptsize$\pm$2.4} & 41.1\,{\scriptsize$\pm$2.5} & 74.7\,{\scriptsize$\pm$3.2} \\
+Sleeper-VPI & AgentHarm & 56.8\,{\scriptsize$\pm$7.4} & \text{N/A} & 17.6\,{\scriptsize$\pm$5.7} & \text{N/A} & 14.8\,{\scriptsize$\pm$5.1} & \text{N/A} \\
+Sleeper-VPI & BBH & 25.2\,{\scriptsize$\pm$2.3} & \text{N/A} & 23.6\,{\scriptsize$\pm$2.2} & \text{N/A} & 1.2\,{\scriptsize$\pm$0.6} & \text{N/A} \\
+\midrule
+Sleeper-MTBA & MMLU & 65.9\,{\scriptsize$\pm$2.4} & 1.9\,{\scriptsize$\pm$0.9} & 51.2\,{\scriptsize$\pm$2.5} & 15.2\,{\scriptsize$\pm$2.6} & 37.9\,{\scriptsize$\pm$2.5} & 74.5\,{\scriptsize$\pm$3.2} \\
+Sleeper-MTBA & AgentHarm & 46.0\,{\scriptsize$\pm$7.4} & \text{N/A} & 24.4\,{\scriptsize$\pm$6.5} & \text{N/A} & 12.5\,{\scriptsize$\pm$4.8} & \text{N/A} \\
+Sleeper-MTBA & BBH & 25.2\,{\scriptsize$\pm$2.3} & \text{N/A} & 23.6\,{\scriptsize$\pm$2.2} & \text{N/A} & 1.1\,{\scriptsize$\pm$0.5} & \text{N/A} \\
+\midrule
+Sleeper-CTBA & MMLU & 65.6\,{\scriptsize$\pm$2.4} & 0.3\,{\scriptsize$\pm$0.4} & 45.8\,{\scriptsize$\pm$2.5} & 18.5\,{\scriptsize$\pm$2.9} & 34.3\,{\scriptsize$\pm$2.5} & 78.8\,{\scriptsize$\pm$3.0} \\
+Sleeper-CTBA & AgentHarm & 50.0\,{\scriptsize$\pm$7.4} & \text{N/A} & 25.6\,{\scriptsize$\pm$6.5} & \text{N/A} & 11.4\,{\scriptsize$\pm$4.8} & \text{N/A} \\
+Sleeper-CTBA & BBH & 25.2\,{\scriptsize$\pm$2.3} & \text{N/A} & 23.6\,{\scriptsize$\pm$2.2} & \text{N/A} & 1.2\,{\scriptsize$\pm$0.6} & \text{N/A} \\
+\bottomrule
+\end{tabular}
+\end{table}

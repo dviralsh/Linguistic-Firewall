@@ -1,0 +1,10 @@
+{
+  "dataset": "AgentHarm",
+  "antap_accuracy": 0.5,
+  "autogen_accuracy": 0.11363636363636363,
+  "embedllm_accuracy": 0.2556818181818182,
+  "antap_asr": 0.0,
+  "autogen_asr": 0.0,
+  "embedllm_asr": 0.0,
+  "embedllm_best_dim": 128
+}

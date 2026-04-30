@@ -1,0 +1,25 @@
+{
+  "n_malicious": 15,
+  "active_malicious_agents": [
+    "Mal_A_Law",
+    "Mal_A_Psychology",
+    "Mal_A_Economics",
+    "Mal_A_Medicine",
+    "Mal_A_Philosophy",
+    "Mal_A_Physics",
+    "Mal_A_History",
+    "Mal_A_Chemistry",
+    "Mal_A_Math",
+    "Mal_B_Law",
+    "Mal_B_Psychology",
+    "Mal_B_Economics",
+    "Mal_B_Physics",
+    "Mal_B_History",
+    "Mal_B_Math"
+  ],
+  "antap_accuracy": 0.6373333333333333,
+  "antap_asr": 0.5659851301115242,
+  "embedllm_accuracy": 0.5353333333333333,
+  "embedllm_asr": 0.6003717472118959,
+  "embedllm_best_dim": 128
+}

@@ -1,0 +1,10 @@
+{
+  "dataset": "MMLU",
+  "antap_accuracy": 0.6677656801104125,
+  "autogen_accuracy": 0.14192608495629505,
+  "embedllm_accuracy": 0.524612789449471,
+  "antap_asr": 0.0,
+  "autogen_asr": 0.0,
+  "embedllm_asr": 0.0,
+  "embedllm_best_dim": 128
+}

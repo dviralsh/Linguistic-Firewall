@@ -1,0 +1,15 @@
+{
+  "n_malicious": 5,
+  "active_malicious_agents": [
+    "Mal_A_Law",
+    "Mal_A_Psychology",
+    "Mal_A_Biology",
+    "Mal_A_Economics",
+    "Mal_A_Medicine"
+  ],
+  "antap_accuracy": 0.652,
+  "antap_asr": 0.35714285714285715,
+  "embedllm_accuracy": 0.5353333333333333,
+  "embedllm_asr": 0.43993506493506496,
+  "embedllm_best_dim": 128
+}

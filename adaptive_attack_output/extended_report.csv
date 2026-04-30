@@ -1,0 +1,3 @@
+router,seeds,non_adaptive_mean_%,non_adaptive_std_%,adaptive_mean_%,adaptive_std_%,delta_mean_%
+ANTAP,"[0, 1, 2, 3, 4, 5, 6]",58.93,5.47,59.09,5.5,0.16
+EMBEDLLM,"[0, 1, 2, 3, 4, 5, 6]",66.64,3.04,87.74,3.36,21.1

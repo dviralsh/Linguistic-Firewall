@@ -1,0 +1,40 @@
+{
+  "experiment": "adaptive_attack_extended",
+  "n_seeds": 7,
+  "results": [
+    {
+      "router": "ANTAP",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "non_adaptive_mean_%": 58.93,
+      "non_adaptive_std_%": 5.47,
+      "adaptive_mean_%": 59.09,
+      "adaptive_std_%": 5.5,
+      "delta_mean_%": 0.16
+    },
+    {
+      "router": "EMBEDLLM",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "non_adaptive_mean_%": 66.64,
+      "non_adaptive_std_%": 3.04,
+      "adaptive_mean_%": 87.74,
+      "adaptive_std_%": 3.36,
+      "delta_mean_%": 21.1
+    }
+  ]
+}

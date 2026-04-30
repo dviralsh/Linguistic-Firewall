@@ -1,0 +1,10 @@
+{
+  "dataset": "BBH_base",
+  "antap_accuracy": 0.2524893314366999,
+  "autogen_accuracy": 0.01209103840682788,
+  "embedllm_accuracy": 0.2361308677098151,
+  "antap_asr": 0.0,
+  "autogen_asr": 0.0,
+  "embedllm_asr": 0.0,
+  "embedllm_best_dim": 128
+}

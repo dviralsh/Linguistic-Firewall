@@ -1,0 +1,50 @@
+% ANTAP Ablation LaTeX Tables
+% Auto-generated — do not edit manually
+
+\begin{table}[t]
+\centering
+\caption{ANTAP routing accuracy (\%) on MMLU as a function of regularisation strength $\lambda$ and singular-value threshold $\varepsilon$. Best embedding model (e5-base-v2), full calibration set.}
+\label{tab:ablation_lambda_eps}
+\begin{tabular}{ccccc}
+\toprule
+$\lambda$ \textbackslash $\varepsilon$ & 0.001 & 0.01 & 0.1 & 1.0 \\
+\midrule
+0.001 & 54.600 & 54.600 & 55.333 & 69.133 \\
+0.01 & 57.667 & 57.667 & 57.867 & 69.267 \\
+0.1 & 64.467 & 64.467 & 64.733 & 69.400 \\
+1.0 & 70.267 & 70.267 & 70.267 & 70.533 \\
+10.0 & 70.467 & 70.467 & 70.467 & 70.467 \\
+100.0 & 70.467 & 70.467 & 70.467 & 70.467 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{ANTAP routing accuracy (\%) on MMLU as a function of embedding model and calibration set size (fraction of training data). Best hyperparameters ($\lambda=1.0$, $\varepsilon=1.0$).}
+\label{tab:ablation_model_trainsize}
+\begin{tabular}{lcccc}
+\toprule
+Model & 10\% & 25\% & 50\% & 100\% \\
+\midrule
+bge-large-en-v1.5 & 61.506 & 61.088 & 61.088 & 62.343 \\
+e5-base-v2 & 60.669 & 60.669 & 60.669 & 62.762 \\
+all-MiniLM-L6-v2 & 51.464 & 55.649 & 56.067 & 59.414 \\
+all-mpnet-base-v2 & 57.741 & 61.088 & 59.414 & 61.088 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Best ANTAP configuration per benchmark. Accuracy and mean routing latency (ms) on the test set.}
+\label{tab:best_configs}
+\begin{tabular}{lllccc}
+\toprule
+Dataset & Model & $\lambda$ / $\varepsilon$ & ACC (\%) & Latency (ms) \\
+\midrule
+mmlu & e5-base-v2 & 1.0/1.0 & 70.5 & 8.8 \\
+agentharm & all-MiniLM-L6-v2 & 0.1/0.001 & 43.2 & 2.1 \\
+\bottomrule
+\end{tabular}
+\end{table}

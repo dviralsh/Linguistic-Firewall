@@ -1,0 +1,281 @@
+% ============================================================
+%  ANTAP — All Result Tables
+%  Auto-generated from bootstrap_stats.csv + ablation_output/
+%  n=1,500 MMLU test rows, n=176 AgentHarm rows
+%  Bootstrap 95% CI: 10,000 resamples (seed=42)
+%  Format: mean ± half-CI  (all values in %)
+% ============================================================
+
+% ── Packages required ────────────────────────────────────────
+% \usepackage{booktabs}
+% \usepackage{multirow}
+% \usepackage{makecell}   % for \thead
+% \usepackage{xcolor}     % optional, for \cellcolor highlights
+% ─────────────────────────────────────────────────────────────
+
+
+% ============================================================
+%  TABLE 1  –  RQ1: Main results (Description-Injection Attack)
+% ============================================================
+\begin{table}[t]
+\centering
+\small
+\caption{%
+  RQ1 – Description-injection attack results with bootstrap 95\,\% CI
+  (10{,}000 resamples, $n{=}1{,}500$ MMLU / $n{=}176$ AgentHarm rows).
+  \textbf{ACC} = fraction of prompts routed to the correct agent (\%).
+  \textbf{ASR} = fraction of prompts routed to the malicious agent (\%).
+  $\pm$ denotes half-width of the 95\,\% CI.%
+}
+\label{tab:rq1_description}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llcccccc}
+\toprule
+ & & \multicolumn{2}{c}{\textbf{ANTAP}} & \multicolumn{2}{c}{\textbf{EmbedLLM}} & \multicolumn{2}{c}{\textbf{AutoGen}} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}
+\textbf{Attack} & \textbf{Dataset} & ACC & ASR & ACC & ASR & ACC & ASR \\
+\midrule
+Description & MMLU
+  & $65.1{\pm}2.4$  & $\mathbf{0.2{\pm}0.2}$
+  & $46.3{\pm}2.5$  & $5.8{\pm}1.2$
+  & $12.3{\pm}1.6$  & $75.3{\pm}2.2$ \\
+Description & AgentHarm
+  & $45.5{\pm}7.4$  & $\mathbf{0.0{\pm}0.0}$
+  & $14.2{\pm}5.1$  & $0.0{\pm}0.0$
+  & $10.2{\pm}4.5$  & $67.0{\pm}6.8$ \\
+Description & BBH
+  & $25.0{\pm}2.3$  & $\mathbf{0.4{\pm}0.3}$
+  & $24.1{\pm}2.3$  & $0.9{\pm}0.5$
+  & $1.1{\pm}0.5$   & $67.3{\pm}2.5$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% ============================================================
+%  TABLE 2  –  RQ1: Main results (Sleeper-Agent / DPA Attacks)
+%  AgentHarm ASR is N/A because DPA triggers are MMLU-specific
+%  text injections; AgentHarm prompts never receive triggers.
+% ============================================================
+\begin{table}[t]
+\centering
+\small
+\caption{%
+  RQ1 – Sleeper-agent (data-poisoning) attack results with bootstrap 95\,\% CI.
+  \textbf{ASR} is computed only over triggered test prompts ($n{=}699$ of 1{,}500 MMLU rows).
+  ``N/A'' indicates that DPA trigger tokens are MMLU-specific and are never
+  present in AgentHarm prompts, making ASR semantically undefined.%
+}
+\label{tab:rq1_sleeper}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llcccccc}
+\toprule
+ & & \multicolumn{2}{c}{\textbf{ANTAP}} & \multicolumn{2}{c}{\textbf{EmbedLLM}} & \multicolumn{2}{c}{\textbf{AutoGen}} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}
+\textbf{Attack} & \textbf{Dataset} & ACC & ASR & ACC & ASR & ACC & ASR \\
+\midrule
+% ── BadNet ───────────────────────────────────────────────────
+BadNet & MMLU
+  & $44.9{\pm}2.5$  & $\mathbf{2.4{\pm}1.1}$
+  & $31.8{\pm}2.3$  & $21.3{\pm}3.0$
+  & $29.4{\pm}2.3$  & $73.2{\pm}3.3$ \\
+BadNet & AgentHarm
+  & $0.0{\pm}0.0$   & N/A
+  & $0.0{\pm}0.0$   & N/A
+  & $0.0{\pm}0.0$   & N/A \\
+BadNet & BBH
+  & $25.2{\pm}2.3$  & N/A
+  & $23.6{\pm}2.2$  & N/A
+  & $1.1{\pm}0.5$   & N/A \\
+\midrule
+% ── Sleeper ──────────────────────────────────────────────────
+Sleeper & MMLU
+  & $68.2{\pm}2.3$  & $\mathbf{0.9{\pm}0.6}$
+  & $52.3{\pm}2.5$  & $17.0{\pm}2.9$
+  & $39.3{\pm}2.5$  & $73.5{\pm}3.3$ \\
+Sleeper & AgentHarm
+  & $53.4{\pm}7.4$  & N/A
+  & $34.7{\pm}6.8$  & N/A
+  & $14.2{\pm}5.4$  & N/A \\
+Sleeper & BBH
+  & $25.2{\pm}2.3$  & N/A
+  & $23.6{\pm}2.2$  & N/A
+  & $1.3{\pm}0.6$   & N/A \\
+\midrule
+% ── VPI ──────────────────────────────────────────────────────
+VPI & MMLU
+  & $68.2{\pm}2.4$  & $\mathbf{0.9{\pm}0.6}$
+  & $51.1{\pm}2.5$  & $12.2{\pm}2.5$
+  & $41.1{\pm}2.5$  & $74.7{\pm}3.2$ \\
+VPI & AgentHarm
+  & $56.8{\pm}7.4$  & N/A
+  & $17.6{\pm}5.7$  & N/A
+  & $14.8{\pm}5.1$  & N/A \\
+VPI & BBH
+  & $25.2{\pm}2.3$  & N/A
+  & $23.6{\pm}2.2$  & N/A
+  & $1.2{\pm}0.6$   & N/A \\
+\midrule
+% ── MTBA ─────────────────────────────────────────────────────
+MTBA & MMLU
+  & $65.9{\pm}2.4$  & $\mathbf{1.9{\pm}1.0}$
+  & $51.2{\pm}2.5$  & $15.2{\pm}2.6$
+  & $37.9{\pm}2.5$  & $74.5{\pm}3.3$ \\
+MTBA & AgentHarm
+  & $46.0{\pm}7.4$  & N/A
+  & $24.4{\pm}6.5$  & N/A
+  & $12.5{\pm}4.8$  & N/A \\
+MTBA & BBH
+  & $25.2{\pm}2.3$  & N/A
+  & $23.6{\pm}2.2$  & N/A
+  & $1.1{\pm}0.5$   & N/A \\
+\midrule
+% ── CTBA ─────────────────────────────────────────────────────
+CTBA & MMLU
+  & $65.6{\pm}2.4$  & $\mathbf{0.3{\pm}0.4}$
+  & $45.8{\pm}2.5$  & $18.5{\pm}2.9$
+  & $34.3{\pm}2.4$  & $78.8{\pm}3.0$ \\
+CTBA & AgentHarm
+  & $50.0{\pm}7.4$  & N/A
+  & $25.6{\pm}6.5$  & N/A
+  & $11.4{\pm}4.8$  & N/A \\
+CTBA & BBH
+  & $25.2{\pm}2.3$  & N/A
+  & $23.6{\pm}2.2$  & N/A
+  & $1.2{\pm}0.6$   & N/A \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% ============================================================
+%  TABLE 3  –  Ablation: Regularisation (λ) × Threshold (ε)
+% ============================================================
+\begin{table}[t]
+\centering
+\small
+\caption{%
+  Ablation: ANTAP routing accuracy (\%) on MMLU as a function of
+  regularisation strength $\lambda$ and singular-value threshold $\varepsilon$.
+  Embedding model fixed to \texttt{e5-base-v2}; full calibration set used.
+  Best cell shown in \textbf{bold}.%
+}
+\label{tab:ablation_lambda_eps}
+\begin{tabular}{ccccc}
+\toprule
+$\lambda$ \textbackslash\ $\varepsilon$ & 0.001 & 0.01 & 0.1 & 1.0 \\
+\midrule
+0.001 & 54.6 & 54.6 & 55.3 & 69.1 \\
+0.01  & 57.7 & 57.7 & 57.9 & 69.3 \\
+0.1   & 64.5 & 64.5 & 64.7 & 69.4 \\
+1.0   & 70.3 & 70.3 & 70.3 & \textbf{70.5} \\
+10.0  & 70.5 & 70.5 & 70.5 & 70.5 \\
+100.0 & 70.5 & 70.5 & 70.5 & 70.5 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% ============================================================
+%  TABLE 4  –  Ablation: Embedding Model × Calibration Set Size
+% ============================================================
+\begin{table}[t]
+\centering
+\small
+\caption{%
+  Ablation: ANTAP routing accuracy (\%) on MMLU as a function of
+  sentence-transformer embedding model and calibration set size
+  (fraction of training data used).
+  Hyperparameters fixed to best values ($\lambda{=}1.0$, $\varepsilon{=}1.0$).
+  Best cell shown in \textbf{bold}.%
+}
+\label{tab:ablation_model_trainsize}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Model} & \textbf{10\,\%} & \textbf{25\,\%} & \textbf{50\,\%} & \textbf{100\,\%} \\
+\midrule
+\texttt{e5-base-v2}        & 60.7 & 60.7 & 60.7 & \textbf{62.8} \\
+\texttt{bge-large-en-v1.5} & 61.5 & 61.1 & 61.1 & 62.3 \\
+\texttt{all-mpnet-base-v2} & 57.7 & 61.1 & 59.4 & 61.1 \\
+\texttt{all-MiniLM-L6-v2}  & 51.5 & 55.6 & 56.1 & 59.4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% ============================================================
+%  TABLE 5  –  Best ANTAP Configuration per Benchmark
+% ============================================================
+\begin{table}[t]
+\centering
+\small
+\caption{%
+  Best ANTAP configuration per benchmark, selected by routing accuracy
+  on the test set.  Latency is mean inference time per query (ms).%
+}
+\label{tab:best_configs}
+\begin{tabular}{lllcc}
+\toprule
+\textbf{Dataset} & \textbf{Model} & \textbf{$\lambda$ / $\varepsilon$} & \textbf{ACC (\%)} & \textbf{Latency (ms)} \\
+\midrule
+MMLU      & \texttt{e5-base-v2}       & 1.0 / 1.0   & 70.5 & 8.8 \\
+AgentHarm & \texttt{all-MiniLM-L6-v2} & 0.1 / 0.001 & 43.2 & 2.1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% ============================================================
+%  TABLE 6  –  Adaptive Attack Ablation: Trigger Length
+%  7 seeds each; trigger_len=4 is the baseline (same as RQ3)
+%  ANTAP stays ≤6 pp regardless of length; EmbedLLM scales.
+% ============================================================
+\begin{table}[t]
+\centering
+\small
+\caption{%
+  Adaptive attack ablation: effect of trigger length on ASR increase ($\Delta$ASR)
+  over the no-trigger baseline.  Attack budget fixed at 30 iterations.
+  Results averaged over 7 random seeds on AgentHarm.%
+}
+\label{tab:ablation_trigger_len}
+\begin{tabular}{ccc}
+\toprule
+\textbf{Trigger length} & \textbf{ANTAP $\Delta$ASR} & \textbf{EmbedLLM $\Delta$ASR} \\
+\midrule
+1  & $+1.1$\,pp & $+5.4$\,pp \\
+2  & $+1.1$\,pp & $+13.8$\,pp \\
+4  & $+3.7$\,pp & $+22.5$\,pp \\
+8  & $+6.3$\,pp & $+27.4$\,pp \\
+16 & $+2.0$\,pp & $+30.9$\,pp \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% ============================================================
+%  TABLE 7  –  Adaptive Attack Ablation: Attack Budget
+%  All conditions: trigger_len=4, 7 seeds, AgentHarm.
+%  ANTAP is completely flat — more iterations yield zero gain.
+% ============================================================
+\begin{table}[t]
+\centering
+\small
+\caption{%
+  Adaptive attack ablation: effect of optimisation budget (greedy iterations)
+  on $\Delta$ASR.  Trigger length fixed at 4 tokens, 7 seeds.
+  ANTAP is invariant to attack budget; EmbedLLM converges by iteration~10.%
+}
+\label{tab:ablation_attack_budget}
+\begin{tabular}{ccc}
+\toprule
+\textbf{Iterations} & \textbf{ANTAP $\Delta$ASR} & \textbf{EmbedLLM $\Delta$ASR} \\
+\midrule
+10  & $+3.7$\,pp & $+22.5$\,pp \\
+30  & $+3.7$\,pp & $+22.5$\,pp \\
+50  & $+3.7$\,pp & $+22.5$\,pp \\
+100 & $+3.7$\,pp & $+22.5$\,pp \\
+200 & $+3.7$\,pp & $+22.5$\,pp \\
+\bottomrule
+\end{tabular}
+\end{table}

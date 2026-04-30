@@ -1,0 +1,54 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+--- [Main] Loading System Module: core.system ---
+--- [Health Check] Pinging LLM Server at http://127.0.0.1:11434/v1... ---
+✅ [Health Check] Server is UP!
+--- [Router] Using device: cuda ---
+Loading weights:   0%|                                                                              | 0/199 [00:00<?, ?it/s]Loading weights: 100%|█████████████████████████████████████████████████████████████████| 199/199 [00:00<00:00, 16855.14it/s]
+[1mMPNetModel LOAD REPORT[0m from: sentence-transformers/all-mpnet-base-v2
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+--- [Router] Training Embedding matrix from train_random_100.csv ---
+Traceback (most recent call last):
+  File "/workspace/ANTAP/main.py", line 402, in <module>
+    asyncio.run(run_benchmark(args))
+  File "/usr/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/workspace/ANTAP/main.py", line 112, in run_benchmark
+    router = SemanticEmbeddingRouter(
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/ANTAP/core/router.py", line 63, in __init__
+    self.agent_names, self.E_M = self._train_embedding_matrix(train_csv_path)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/ANTAP/core/router.py", line 88, in _train_embedding_matrix
+    df = pd.read_csv(train_csv_path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/pandas/io/parsers/readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/pandas/io/parsers/readers.py", line 306, in _read
+    return parser.read(nrows)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/pandas/io/parsers/readers.py", line 1947, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/pandas/io/parsers/c_parser_wrapper.py", line 215, in read
+    chunks = self._reader.read_low_memory(nrows)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/parsers.pyx", line 832, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 897, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 868, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 885, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2084, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 7 fields in line 35, saw 18
+

@@ -1,0 +1,53 @@
+ANTAP Ablation Study — Analysis Summary
+============================================================
+Total merged rows: 432
+MMLU rows (full train): 96
+
+=== Main Results (train_fraction=1.0, best λ/ε per model) ===
+                        embedding_model  lambda  epsilon  accuracy  avg_route_time_sec
+                    intfloat/e5-base-v2     1.0    1.000  0.705333            0.008771
+                 BAAI/bge-large-en-v1.5    10.0    0.001  0.704667            0.015925
+sentence-transformers/all-mpnet-base-v2   100.0    0.001  0.704000            0.010011
+ sentence-transformers/all-MiniLM-L6-v2   100.0    0.001  0.702667            0.005016
+
+=== Best Overall Config (MMLU) ===
+Model : intfloat/e5-base-v2
+λ     : 1.0
+ε     : 1.0
+ACC   : 0.7053
+
+=== Lambda Sensitivity (best model, full train) ===
+Range of ACC: 0.6913 – 0.7053  (span 0.0140)
+lambda
+0.001      0.691333
+0.010      0.692667
+0.100      0.694000
+1.000      0.705333
+10.000     0.704667
+100.000    0.704667
+
+=== Embedding Model Sensitivity (full train, best λ/ε each) ===
+Range of ACC: 0.7027 – 0.7053  (span 0.0027)
+embedding_model
+intfloat/e5-base-v2                        0.705333
+BAAI/bge-large-en-v1.5                     0.704667
+sentence-transformers/all-mpnet-base-v2    0.704000
+sentence-transformers/all-MiniLM-L6-v2     0.702667
+
+=== Train Size Sensitivity (model=intfloat/e5-base-v2, λ=1.0, ε=0.001, from original data) ===
+Range of ACC: 0.5983 – 0.6276  (span 0.0293)
+train_fraction_used
+0.10    0.606695
+0.25    0.606695
+0.50    0.598326
+1.00    0.627615
+
+=== Hyperparameter Importance (ACC span) ===
+  train_size (original data): 0.0293
+  lambda (new exp data): 0.0140
+  embedding_model (new exp data): 0.0027
+
+=== Recommendation ===
+Use model=intfloat/e5-base-v2, λ=1.0, ε=1.0.
+ANTAP accuracy is most sensitive to embedding model choice,
+moderately sensitive to λ, and robust to train size above 25%.

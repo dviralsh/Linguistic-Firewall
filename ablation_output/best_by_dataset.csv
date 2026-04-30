@@ -1,0 +1,2 @@
+dataset,train_csv,test_csv,train_rows_total,train_rows_used,train_fraction_used,test_rows,embedding_model,lambda,epsilon,accuracy,asr,avg_route_time_sec,embedding_state_path
+mmlu,experiments_output/exp_sleeper_mtba/MMLU_base/train.csv,experiments_output/exp_sleeper_mtba/MMLU_base/test.csv,1000,1000,1.0,1500,intfloat/e5-base-v2,1.0,1.0,0.7053333333333334,0.0,0.008771491451033701,ablation_output/embeddings/e955252e44_intfloat__e5-base-v2_lam1_eps1.pt

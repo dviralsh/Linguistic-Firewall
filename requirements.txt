@@ -1,0 +1,11 @@
+pandas
+tqdm
+ollama
+datasets
+autogen_core
+autogen_ext
+autogen_agentchat
+openai
+tiktoken
+sentence_transformers
+dotenv

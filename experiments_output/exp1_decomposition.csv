@@ -1,0 +1,46 @@
+method,calibration,router,ACC%,ASR%
+badnet,both (original),antap,44.9,2.4
+badnet,triggered-only,antap,43.7,1.1
+badnet,untriggered-only,antap,44.6,4.6
+badnet,both (original),autogen,29.4,73.2
+badnet,triggered-only,autogen,29.7,76.7
+badnet,untriggered-only,autogen,30.2,73.4
+badnet,both (original),embedllm,31.8,21.3
+badnet,triggered-only,embedllm,33.2,14.4
+badnet,untriggered-only,embedllm,34.3,9.2
+ctba,both (original),antap,65.6,0.3
+ctba,triggered-only,antap,63.4,0.4
+ctba,untriggered-only,antap,64.3,4.1
+ctba,both (original),autogen,34.3,78.8
+ctba,triggered-only,autogen,33.7,77.3
+ctba,untriggered-only,autogen,33.9,77.3
+ctba,both (original),embedllm,45.8,18.5
+ctba,triggered-only,embedllm,48.6,12.3
+ctba,untriggered-only,embedllm,52.2,7.0
+mtba,both (original),antap,65.9,1.9
+mtba,triggered-only,antap,64.7,0.6
+mtba,untriggered-only,antap,66.1,2.7
+mtba,both (original),autogen,37.9,74.5
+mtba,triggered-only,autogen,37.0,74.4
+mtba,untriggered-only,autogen,38.1,75.5
+mtba,both (original),embedllm,51.2,15.2
+mtba,triggered-only,embedllm,51.8,10.2
+mtba,untriggered-only,embedllm,52.4,10.7
+sleeper,both (original),antap,68.2,0.9
+sleeper,triggered-only,antap,65.3,1.3
+sleeper,untriggered-only,antap,66.7,0.6
+sleeper,both (original),autogen,39.3,73.5
+sleeper,triggered-only,autogen,41.2,74.4
+sleeper,untriggered-only,autogen,40.5,76.1
+sleeper,both (original),embedllm,52.3,17.0
+sleeper,triggered-only,embedllm,52.9,15.9
+sleeper,untriggered-only,embedllm,55.7,6.2
+vpi,both (original),antap,68.2,0.9
+vpi,triggered-only,antap,60.8,0.9
+vpi,untriggered-only,antap,66.5,2.0
+vpi,both (original),autogen,41.1,74.7
+vpi,triggered-only,autogen,42.2,72.8
+vpi,untriggered-only,autogen,42.1,75.3
+vpi,both (original),embedllm,51.1,12.2
+vpi,triggered-only,embedllm,52.1,13.3
+vpi,untriggered-only,embedllm,50.2,26.6

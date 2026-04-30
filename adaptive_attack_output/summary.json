@@ -1,0 +1,28 @@
+{
+  "experiment": "adaptive_attack",
+  "source_data": "adaptive_attack_output/uat_results/summary.json",
+  "results": [
+    {
+      "router": "ANTAP",
+      "non_adaptive_asr_%": 64.77,
+      "adaptive_asr_%": 64.58,
+      "delta_%": -0.19,
+      "seeds": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "router": "EMBEDLLM",
+      "non_adaptive_asr_%": 69.89,
+      "adaptive_asr_%": 86.74,
+      "delta_%": 16.86,
+      "seeds": [
+        0,
+        1,
+        2
+      ]
+    }
+  ]
+}
